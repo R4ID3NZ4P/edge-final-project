@@ -20,7 +20,7 @@
                                 <form action="{{ route('tasks.update', $task) }}" method="POST" class="inline">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="ml-2 bg-green-500 text-white px-4 py-1 rounded-md">
+                                    <button type="submit" class="ml-2 {{ $task->is_completed ? 'bg-amber-400' : 'bg-green-500' }} text-white px-4 py-1 rounded-md">
                                         {{ $task->is_completed ? 'Undo' : 'Complete' }}
                                     </button>
                                 </form>
